@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <title>Document</title>
+
+    <style>
+
+        #formulario {
+                        margin: 0px auto;
+                        width: 30%;
+                        justify-content: center;    
+                        text-align: center;
+                        align-items: center;
+                        vertical-align: middle;
+                        margin-bottom: 5%;
+                        border: 2px dashed black;
+                    }
+
+        #formulario * {
+                        margin: 0px auto;
+                        text-align:center;
+                        align-items: center;  
+                        margin-top:10px;
+                        margin-left:20px;                               
+        }
+
+
+
+        #formulario input[type=submit] {
+                                margin-bottom: 10px;
+                            }
+
+        table {
+                border:1px solid #ccc;
+                padding:10px;
+                margin: 0px auto;
+        }
+
+        table tr:nth-child(even) {
+                                    background:#ccc;
+                                }
+
+        table td {
+                    padding:5px;
+                    text-align: center;            
+                }
+
+    </style>
+</head>
+<body>
+
+
+    <div id="formulario">
+        <label for="fecha">Fecha: </label>
+        <input type="date" id="fecha" placeholder="Fecha">
+
+        <br />
+
+        <label for="tipo">Tipo de prácticas: </label>
+        <select name="tipo" id="tipo">
+            <option>Dual</option>
+            <option>FCT</option>
+        </select>
+
+        <br />
+
+        <label for="Horas realizadas">Horas realizadas: </label>
+        <input type="number" id="horas" placeholder="Horas realizadas">
+
+        <br />
+
+        <label for="actividad">Actividades realizadas: </label>
+        <textarea type="text" rows="6" cols="50" id="actividad" placeholder="Actividad"></textarea>
+
+        <br />
+
+        <label for="observaciones">Observaciones o incidencias: </label>
+        <textarea type="text" rows="6" cols="50" id="observaciones" placeholder="Observaciones"></textarea>
+
+        <br />
+
+       <input type="submit" id="addprod" name="enviar" value="Enviar">
+    </div>
+
+
+    <table>
+        <thead>
+            <tr>
+                <th>Fecha: </th>
+                <th>Tipo de práctica</th>
+                <th>Horas realizadas</th>
+                <th>Actividad realizada</th>
+                <th>Observaciones</th>
+            </tr>
+            <tr>
+                <td>22/11/2022</td>
+                <td>Dual</td>
+                <td>6</td>
+                <td>Formación</td>
+                <td>Sin novedad</td>
+                <td><button onclick="dobleClick()">Editar</button></td>
+                <td><button class="btn btn-primary btnborrar">Borrar</button></td>
+            </tr>
+        </thead>
+        <tbody>
+        </tbody>
+    </table>
+
+
+
+    <script>
+        $('#addprod').click(function () {
+            var fecha = $('#fecha').val(); 
+            var tipo = $('#tipo').val();
+            var horas = $('#horas').val();
+            var actividad = $('#actividad').val();
+            var observaciones = $('#observaciones').val();
+            $('table tbody').append(`
+                <tr>
+                    <td id="fecha">${fecha}</td>
+                    <td id="tipo">${tipo}</td>
+                    <td id="horas">${horas}</td>
+                    <td id="actividad">${actividad}</td>
+                    <td id="observaciones">${observaciones}</td>
+                    <td><button onclick="dobleClick()">Editar</button></td>
+                    <td><button class="btn btn-primary btnborrar">Borrar</button></td>
+                </tr>`
+            );
+
+            document.addEventListener('DOMContentLoaded', function(){
+            let formulario = document.getElementById('formulario');
+            formulario.addEventListener('submit', function() {
+            formulario.reset();
+        });
+
+
+    });
+  });
+    
+        // Delegar evento buscando botones por clase
+        $(document).on('click', '.btnborrar', function() {
+            $(event.target).closest('tr').remove();
+        });
+
+
+        // creamos un evento doble click para cada una de las celdas de la tabla
+
+        function dobleClick() {
+            const tds=document.querySelectorAll("td");
+            
+            for(td of tds) {
+                td.addEventListener("dblclick",function() {
+                    // creamos un nuevo input con el valor actual de la celda
+                    let input=document.createElement('input');
+                    input.value=this.textContent;
+            
+                    // evento que se ejecuta cuando el input pierde el foco
+                    input.addEventListener("blur",function() {
+                        removeInput(this);
+                    });
+            
+                    // evento que se ejecuta cada vez que se deja de pulsar una tecla
+                    input.addEventListener("keydown",function(e) {
+            
+                        // la tecla 13, es el Enter
+                        if(e.which==13) {
+                            removeInput(this);
+                        }
+                    });
+            
+                    // quitamos el contenido de la celda de la tabla
+                    this.textContent="";
+            
+                    // Ponemos en la celda el input que hemos creado
+                    this.appendChild(input);
+                });
+            }
+            
+            // Eliminamos el input y ponemos el valor del mismo
+            function removeInput(e) {
+                e.parentElement.textContent=e.value;
+            }
+        }
+
+    </script>
+</body>
+</html>

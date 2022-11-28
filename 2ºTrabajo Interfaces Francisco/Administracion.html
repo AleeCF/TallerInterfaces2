@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="author" content="Juan José Aragón Egea" content="Alejandro Rebola Casquero"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/style.css" type="text/css" media="all">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+
+    <title>Nike</title>
+</head>
+
+<body>
+    <div id="logonike">
+
+    </div>
+    <div class="principal">
+        <nav class="navegador">
+          <a href ="index.html">Principal</a>
+          <a href ="sobrenosotros.html">Sobre Nosotros</a>
+          <a href ="productos.html">Productos</a>
+          <a href ="formulario.html">Contacto</a>
+          <a href ="login.html">Registrarse</a>
+          <a href ="Administracion.html">Administración</a>
+        </nav>
+    </div>
+
+   
+    <div id="formulario">
+        <label for="fecha">Fecha: </label>
+        <input type="date" id="fecha" placeholder="Fecha">
+
+        <br />
+
+        <label for="tipo">Tipo de producto: </label>
+        <select name="tipo" id="tipo">
+            <option>Calzado</option>
+            <option>Ropa</option>
+        </select>
+
+        <br />
+
+        <label for="Horas realizadas">Productos Añadidos: </label>
+        <input type="number" id="horas" placeholder="Productos a añadir">
+
+        <br />
+
+        <label for="actividad">Descripcion producto: </label>
+        <textarea type="text" rows="6" cols="50" id="actividad" placeholder="Descripcion"></textarea>
+
+        <br />
+
+        <label for="observaciones">Observaciones o incidencias: </label>
+        <textarea type="text" rows="6" cols="50" id="observaciones" placeholder="Observaciones"></textarea>
+
+        <br />
+
+       <input type="submit" id="addprod" name="enviar" value="Enviar">
+    </div>
+
+
+    <table>
+        <thead>
+            <tr>
+                <th>Fecha Articulo: </th>
+                <th>Tipo de producto</th>
+                <th>Numero Productos</th>
+                <th>Descripcion Producto</th>
+                <th>Observaciones</th>
+            </tr>
+       
+        </thead>
+        <tbody>
+        </tbody>
+    </table>
+
+
+    <script src="Js.js"></script>
+
+</body>
+
+<footer>
+
+        <ol>
+            <li>Sobre Nike</li>
+            <li>Trabaja con nosotros</li>
+            <li>Tiendas cercanas</li>
+          </ol>
+          <ol>
+            <li>Preguntas Frecuentes</li>
+            <li>Mensaje</li>
+            <li>Informacion</li>
+          </ol>
+          <ol>
+            <li>Factory Store</li>
+            <li>Inversores</li>
+            <li>Club</li>
+          </ol>
+    </div>
+
+</html>
