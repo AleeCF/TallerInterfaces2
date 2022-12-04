@@ -14,99 +14,129 @@
 </head>
 
 <body>
-    <div id="logonike">
+    
 
-    </div>
-    <div class="principal">
-        <nav class="navegador">
-          <a href ="index.html">Principal</a>
-          <a href ="sobrenosotros.html">Sobre Nosotros</a>
-          <a href ="productos.html">Productos</a>
-          <a href ="formulario.html">Contacto</a>
-          <a href ="login.html">Registrarse</a>
-          <a href ="Administracion.html">Administración</a>
+    <div>
+        <nav class="menu-collapsed">
+            <div class="menu-btn">
+                <div id="tittle"><span>MENÚ</span></div>
+                <input class="btn-nav" type="button" value="Inicio">
+                <input class="btn-nav" type="button" value="Estadisticas"></input>
+                <input class="btn-nav" type="button" value="Lista de ventas">
+            </div>              
         </nav>
-    </div>
 
-   
-    <div id="formulario">
-        <label for="fecha">Fecha: </label>
-        <input type="date" id="fecha" placeholder="Fecha">
+    <div class="content">
+        <div class="formulario">
+            <label for="fecha">Fecha: </label>
+            <input type="date" id="fecha" placeholder="Fecha">
 
-        <br />
+            <br />
 
-        <label for="tipo">Tipo de producto: </label>
-        <select name="tipo" id="tipo">
+            <label for="tipo">Tipo de producto: </label>
+            <select name="tipo" id="tipo">
             <option>Calzado</option>
             <option>Ropa</option>
-        </select>
+            </select>
 
-        <br />
+            <br />
 
-        <label for="Horas realizadas">Productos Añadidos: </label>
-        <input type="number" id="horas" placeholder="Productos a añadir">
+            <label for="Horas realizadas">Productos Añadidos: </label>
+            <input type="number" id="horas" placeholder="Productos a añadir">
 
-        <br />
+            <br />
 
-        <label for="actividad">Descripcion producto: </label>
-        <textarea type="text" rows="6" cols="50" id="actividad" placeholder="Descripcion"></textarea>
+            <label for="actividad">Descripcion producto: </label>
+            <textarea type="text" rows="6" cols="50" id="actividad" placeholder="Descripcion"></textarea>
 
-        <br />
+            <br />
 
-        <label for="observaciones">Observaciones o incidencias: </label>
-        <textarea type="text" rows="6" cols="50" id="observaciones" placeholder="Observaciones"></textarea>
+            <label for="observaciones">Observaciones o incidencias: </label>
+            <textarea type="text" rows="6" cols="50" id="observaciones" placeholder="Observaciones"></textarea>
 
-        <br />
+            <br />
 
-       <input type="submit" id="addprod" name="enviar" value="Enviar">
+            <input type="submit" id="addprod" name="enviar" value="Enviar">
+        </div>
+
+        <div class="stadistics">
+            <img id="st" src="fotos/estadisticas.jpg" >
+        </div>
     </div>
 
-
-    <table>
-        <thead>
-            <tr>
-                <th>Fecha Articulo: </th>
+    <table>   
+        <thead>   
+            <th colspan="7" id="title">Productos vendidos en EEUU y Europa en el último día</th>
+        
+            <tr>      
+                <th >Fecha Articulo: </th>
                 <th>Tipo de producto</th>
                 <th>Numero Productos</th>
                 <th>Descripcion Producto</th>
-                <th>Observaciones</th>
+                <th>Destino: </th>
             </tr>
             <tr>
-                <td>22/11/2022</td>
-                <td>Calzado</td>
-                <td>3</td>
-                <td>Zapato Vaquero</td>
-                <td>Sin novedad</td>
+                <td>31/12/2021</td>
+                <td>Ropa</td>
+                <td>6.724</td>
+                <td>Ropa/Ropa deportiva</td>
+                <td>EEUU</td>
                 <td><button onclick="dobleClick()">Editar</button></td>
                 <td><button class="btn btn-primary btnborrar">Borrar</button></td>
             </tr>
+            <tr>
+                <td>31/12/2021</td>
+                <td>Calzado</td>
+                <td>5.541</td>
+                <td>Todos los zapatos</td>
+                <td>EEUU</td>
+                <td><button onclick="dobleClick()">Editar</button></td>
+                <td><button class="btn btn-primary btnborrar">Borrar</button></td>
+            </tr>
+            <tr>
+                <td>31/12/2021</td>
+                <td>Ropa</td>
+                <td>6.722</td>
+                <td>Ropa/Ropa deportiva</td>
+                <td>Europa</td>
+                <td><button onclick="dobleClick()">Editar</button></td>
+                <td><button class="btn btn-primary btnborrar">Borrar</button></td>
+            </tr>
+            <tr>
+                <td>31/12/2021</td>
+                <td>Calzado</td>
+                <td>7.352</td>
+                <td>Todos los zapatos</td>
+                <td>Europa</td>
+                <td><button onclick="dobleClick()">Editar</button></td>
+                <td><button class="btn btn-primary btnborrar">Borrar</button></td>
+            </tr>
+            <tr>
+                <td>29/12/2021</td>
+                <td>Accesorios</td>
+                <td>4.346</td>
+                <td>Gorras/Guantes</td>
+                <td>EEUU</td>
+                <td><button onclick="dobleClick()">Editar</button></td>
+                <td><button class="btn btn-primary btnborrar">Borrar</button></td>
+            </tr>
+            <tr>
+                <td>27/12/2021</td>
+                <td>Accesorios</td>
+                <td>9.247</td>
+                <td>Gorras/Guantes</td>
+                <td>Europa</td>
+                <td><button onclick="dobleClick()">Editar</button></td>
+                <td><button class="btn btn-primary btnborrar">Borrar</button></td>
+            </tr>
+
         </thead>
+
         <tbody>
         </tbody>
     </table>
 
-
     <script src="Js.js"></script>
-
+</div>
 </body>
-
-<footer>
-
-        <ol>
-            <li>Sobre Nike</li>
-            <li>Trabaja con nosotros</li>
-            <li>Tiendas cercanas</li>
-          </ol>
-          <ol>
-            <li>Preguntas Frecuentes</li>
-            <li>Mensaje</li>
-            <li>Informacion</li>
-          </ol>
-          <ol>
-            <li>Factory Store</li>
-            <li>Inversores</li>
-            <li>Club</li>
-          </ol>
-    </div>
-
 </html>
