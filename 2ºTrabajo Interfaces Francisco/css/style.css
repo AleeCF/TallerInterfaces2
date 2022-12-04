@@ -1,6 +1,6 @@
 /* CODIGO BASE */
 body {
-    background-color: #e5e0e0dd !important;
+    background-color: #e5e0e0dd;
     margin: 0;
 }
 
@@ -515,21 +515,60 @@ p {
 }
 
 /* ADMINISTRACION */
-#formulario {
-    background-color: rgb(214, 196, 171);
-    margin: 0px auto;
-    width: 87%;
-    justify-content: center;
+
+#body-adm{
+    background-color: white;
+}
+.menu-collapsed{
+    background:-webkit-linear-gradient(rgb(127, 17, 17), rgb(26, 20, 136));
+    color:white;
+    position: fixed;
+    height: 100%;
+    left: 0;
+    top:0;
     text-align: center;
-    align-items: center;
+    width: 10vw;
+}
+.menu-btn{
+    display: flex;
+    flex-direction: column;
+
+}
+#tittle{
+    font-size: 2rem;
+    border:none;
+    border-bottom: 2px solid rgb(255, 255, 255);
+    margin: 5% 0 5% 0;
+
+}
+
+.btn-nav{
+    border: 1px solid;
+    border-radius: 7%;
+    background: grey ;
+    margin: 60% 10% 0 10%;
+    height: 4vw;
+    color: white;
+    text-align: center;
+}
+ .btn-nav:hover{
+    background-color: rgb(80, 79, 79);
+ }
+
+.formulario {
+    padding:1% 2% 1% 2%;
+    background-color: rgb(214, 196, 171);
+    margin-left: 15%;
+    width: 30%;
+    text-align: center;
     vertical-align: middle;
     margin-bottom: 5%;
     border: 2px dashed black;
-    margin-top: 10%;
+    margin-top: 5%;
     font-weight: bold;
 }
 
-#formulario * {
+.formulario * {
     margin: 0px auto;
     text-align: center;
     align-items: center;
@@ -537,17 +576,19 @@ p {
     margin-left: 20px;
 }
 
-#formulario input[type=submit] {
+.formulario input[type=submit] {
+    display: flex;
     margin-bottom: 10px;
     width: 15%;
 }
 
 table {
     border: 1px solid #ccc;
-    padding: 10px;
-    margin: 0px auto;
+    padding: 8px;
+    margin-right: 12%;
     background-color: bisque;
 }
+
 
 table tr:nth-child(even) {
     background: #ccc;
@@ -558,9 +599,36 @@ table td {
     text-align: center;
 }
 
-
-.productoslista {
-    width: 70%;
-    height: 50%;
-    background-color: white;
+table{
+    margin-left: 30%;
+    color: black;
 }
+
+.content{
+    display: flex;
+    flex-direction: wrap;
+}
+#body{
+    background-color: white !important;
+}
+.stadistics{
+    display: flex;
+    width: 33vw;
+    height:25vh;
+    padding-left: 5%;
+    padding-top: 5%;
+  }
+  
+  #st{
+    
+    object-fit:contain;
+    width:120%;
+    height:200%; 
+    border-radius: 10px;
+  }
+  #title{
+    font-size: 3rem;
+    border:none;
+    border-bottom: 2px solid black;
+  }
+
